@@ -7,7 +7,7 @@
         <div class="auto-container clearfix">
             <div class="top-left clearfix">
                 <ul class="list">
-                    <li><span class="icon fas fa-envelope"></span> 2130 Fulton Street San Diego CA 94117-1080 USA</li>
+                    <li><span class="icon fas fa-envelope"></span> {{trans('main_header_trans.2130 Fulton Street San Diego CA 94117-1080 USA')}}</li>
                     <li><span class="icon fas fa-phone"></span> <a href="tel:+555–123–2323"> 555–123–2323</a></li>
                 </ul>
             </div>
@@ -33,7 +33,7 @@
             <div class="auto-container clearfix">
                 <!--Info-->
                 <div class="logo-outer">
-                    <div class="logo"><a href="index.html"><img src="Site/images/logo.png" alt="" title=""></a></div>
+                    <div class="logo"><a href="index.html"><img src="Site/images/logo.png" alt="" title="" style="width: 250px;height: 60px"></a></div>
                 </div>
 
                 <!--Nav Box-->
@@ -160,7 +160,7 @@
                         <div class="search-box-btn"><span class="icon flaticon-search"></span></div>
                         <!-- Button Box -->
                         <div class="btn-box">
-                            <a href="contact.html" class="theme-btn btn-style-one"><span class="txt">Appointment</span></a>
+                            <a href="contact.html" class="theme-btn btn-style-one"><span class="txt">{{trans('main_header_trans.Appointment')}}</span></a>
                         </div>
                     </div>
 
@@ -175,7 +175,7 @@
         <div class="auto-container clearfix">
             <!--Logo-->
             <div class="logo pull-left">
-                <a href="index.html" class="img-responsive"><img src="Site/images/logo-small.png" alt="" title=""></a>
+                <a href="index.html" class="img-responsive"><img src="Site/images/logo.png" alt="" title=""style="width: 250px;height: 60px"></a>
             </div>
 
             <!--Right Col-->
@@ -199,7 +199,7 @@
 
         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
         <nav class="menu-box">
-            <div class="nav-logo"><a href="index.html"><img src="images/nav-logo.png" alt="" title=""></a></div>
+            <div class="nav-logo"><a href="index.html"><img src="Site/images/logo.png" alt="" title=""style="width: 250px;height: 60px"></a></div>
 
             <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
         </nav>

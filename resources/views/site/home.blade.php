@@ -5,7 +5,6 @@
 @stop
 
 @section('content')
-
     <!-- Main Slider Three -->
     <section class="main-slider-three">
         <div class="banner-carousel">
@@ -19,13 +18,13 @@
                             <!-- Content Column -->
                             <div class="content-column col-lg-6 col-md-12 col-sm-12">
                                 <div class="inner-column">
-                                    <h2>Your Most Trusted Health Partner For Life.</h2>
-                                    <div class="text">We offer free consulting and the best project management for your
-                                        ideas, 100% delivery guaranteed.</div>
+                                    <h2>{{trans('home.Your Most Trusted Health Partner For Life.')}}</h2>
+                                    <div class="text">{{trans('home.We offer free consulting and the best project management for your
+    ideas, 100% delivery guaranteed.')}}</div>
                                     <div class="btn-box">
                                         <a href="contact.html" class="theme-btn appointment-btn"><span
-                                                class="txt">Appointment</span></a>
-                                        <a href="services.html" class="theme-btn services-btn">Services</a>
+                                                class="txt">{{trans('home.Appointment')}}</span></a>
+                                        <a href="services.html" class="theme-btn services-btn">{{trans('home.Services')}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -34,7 +33,7 @@
                             <div class="image-column col-lg-6 col-md-12 col-sm-12">
                                 <div class="inner-column">
                                     <div class="image">
-                                        <img src="Site/images/main-slider/3.jpg" alt="" />
+                                        <img src="Site/images/main-slider/photo-doc.jpg" alt="" style="height: 600px" />
                                     </div>
                                 </div>
                             </div>
@@ -52,13 +51,13 @@
                             <!-- Content Column -->
                             <div class="content-column col-lg-6 col-md-12 col-sm-12">
                                 <div class="inner-column">
-                                    <h2>Your Most Trusted Health Partner For Life.</h2>
-                                    <div class="text">We offer free consulting and the best project management for your
-                                        ideas, 100% delivery guaranteed.</div>
+                                    <h2>{{trans('home.Your Most Trusted Health Partner For Life.')}}</h2>
+                                    <div class="text">{{trans('home.We offer free consulting and the best project management for your
+    ideas, 100% delivery guaranteed.')}}</div>
                                     <div class="btn-box">
                                         <a href="contact.html" class="theme-btn appointment-btn"><span
-                                                class="txt">Appointment</span></a>
-                                        <a href="services.html" class="theme-btn services-btn">Services</a>
+                                                class="txt">{{trans('home.Appointment')}}</span></a>
+                                        <a href="services.html" class="theme-btn services-btn">{{trans('home.Services')}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -67,8 +66,7 @@
                             <div class="image-column col-lg-6 col-md-12 col-sm-12">
                                 <div class="inner-column">
                                     <div class="image">
-                                        <img src="Site/images/main-slider/3.jpg" alt="" />
-                                    </div>
+                                        <img src="Site/images/main-slider/7.jpg" alt="" style="height: 600px" /> </div>
                                 </div>
                             </div>
 
@@ -85,13 +83,13 @@
                             <!-- Content Column -->
                             <div class="content-column col-lg-6 col-md-12 col-sm-12">
                                 <div class="inner-column">
-                                    <h2>Your Most Trusted Health Partner For Life.</h2>
-                                    <div class="text">We offer free consulting and the best project management for your
-                                        ideas, 100% delivery guaranteed.</div>
+                                    <h2>{{trans('home.Your Most Trusted Health Partner For Life.')}}</h2>
+                                    <div class="text">{{trans('home.We offer free consulting and the best project management for your
+    ideas, 100% delivery guaranteed.')}}</div>
                                     <div class="btn-box">
                                         <a href="contact.html" class="theme-btn appointment-btn"><span
-                                                class="txt">Appointment</span></a>
-                                        <a href="services.html" class="theme-btn services-btn">Services</a>
+                                                class="txt">{{trans('home.Appointment')}}</span></a>
+                                        <a href="services.html" class="theme-btn services-btn">{{trans('home.Services')}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +98,7 @@
                             <div class="image-column col-lg-6 col-md-12 col-sm-12">
                                 <div class="inner-column">
                                     <div class="image">
-                                        <img src="Site/images/main-slider/3.jpg" alt="" />
+                                        <img src="Site/images/main-slider/23.jpg" alt=""  style="height: 600px"/>
                                     </div>
                                 </div>
                             </div>
@@ -109,9 +107,8 @@
 
                     </div>
                 </div>
-
             </div>
-            <!-- Add Arrows -->
+                <!-- Add Arrows -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
