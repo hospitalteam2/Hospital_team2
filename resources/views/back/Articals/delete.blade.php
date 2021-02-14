@@ -13,7 +13,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route('artical.destroy','test')}}" method="post">
+                <form action="{{route('articals.destroy','test')}}" method="post">
                     {{ method_field('delete') }}
                     {{ csrf_field() }}
                     {{ trans('Articals.warning') }}

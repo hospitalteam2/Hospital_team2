@@ -10,7 +10,7 @@
             </div>
             <div class="modal-body">
                 <!-- add_form -->
-                <form action="{{ route('artical.update', 'test') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('articals.update', 'test') }}" method="post" enctype="multipart/form-data">
                     {{ method_field('patch') }}
                     @csrf
                     <div class="row">
@@ -57,7 +57,7 @@
                             for="exampleFormControlTextarea1">{{ trans('Articals.image') }}
                             :</label>
                         <input type="file" name="image"   value="{{ old('image', $artical->image) }}" class="form-control">
-                        <img src="{{ asset('images_admin/'.$artical->image) }}" style=" margin-top: 10px; width: 200px; height: 190px;" alt="">
+                        <img src="{{ asset('images_admin/'.$artical->image) }}" style=" margin-top: 10px; width: 200px; height: 160px;" alt="">
                     </div>
                     <br><br>
 

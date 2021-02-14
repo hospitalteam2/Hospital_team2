@@ -16,12 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 
 
- Auth::routes();
- Route::group(['middleware' => ['guest']],function(){
-    Route::get('/', function () {
-        return view('auth.login');
-    });
- });
+Auth::routes(['register' => false]);
+
+
+// Route::group(['middleware' => ['guest']],function(){
+//    Route::get('/', function () {
+//        return view('auth.login');
+//    });
+// });
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
@@ -35,14 +37,16 @@ Route::group(
 
 //   Admin panel
     Route::group(['namespace' => 'Admin'], function(){
-       Route::get('/admin', 'HomeController@index')->name('home');
-       Route::resource('/artical', 'ArticalsController');
-       });
+        Route::get('/admin', 'HomeController@index')->name('home');
 
+        Route::resource('/articals', 'ArticalsController');
+
+        Route::get('/{page}', 'AdminController@index');
     });
 
 
 
+});
 
 
 
@@ -53,7 +57,10 @@ Route::group(
 
 
 
-Route::get('/{page}', 'AdminController@index');
+
+
+
+
 
 
 

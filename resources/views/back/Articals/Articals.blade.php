@@ -55,7 +55,7 @@
                                     <td>
                                         <img
                                             src="{{asset('images_admin/'.$artical->image)}}"
-                                            style="margin-top: 10px; width: 100px; height: 120px; border-radius: 2px "
+                                            style="margin-top: 10px; width: 120px; height: 90px; border-radius: 2px "
                                             alt="">
                                     </td>
                                 </tr>
