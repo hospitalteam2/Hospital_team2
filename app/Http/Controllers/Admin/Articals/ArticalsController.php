@@ -37,7 +37,7 @@ class ArticalsController extends Controller
         $Articals->save();
         toastr()->success(trans('Articals.messages_insert'));
 
-        return redirect()->back()->with(['Add' => ' Data added succesfully ']);
+        return redirect()->back();
     }
 
     public function update(ArticalStore $request )
