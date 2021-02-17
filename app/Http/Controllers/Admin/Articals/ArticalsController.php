@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Articals;
 
 use App\Http\Controllers\Admin\Controller;
 use App\Http\Requests\ArticalStore;
@@ -35,7 +35,7 @@ class ArticalsController extends Controller
         };
 
         $Articals->save();
-        toastr()->success(trans('Articals.messages_insert'));
+         session()->flash('success');
 
         return redirect()->back();
     }
@@ -57,9 +57,8 @@ class ArticalsController extends Controller
                 $articals->image = $filename;
             }
             $articals->save();
-
-            toastr()->success(trans('Articals.messages_update'));
-            return redirect()->route('artical.index');
+            session()->flash('update');
+             return redirect()->back();
         }
         catch
         (\Exception $e) {
@@ -71,7 +70,7 @@ class ArticalsController extends Controller
     public function destroy(Request $request)
     {
         $artical = Artical::findOrFail($request->id)->delete();
-        toastr()->error(trans('Articals.messages_delete'));
-        return redirect()->route('artical.index');
+        session()->flash('deleted');
+        return redirect()->back();
     }
 }

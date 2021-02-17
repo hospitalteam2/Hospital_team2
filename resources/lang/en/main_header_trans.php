@@ -16,4 +16,6 @@ return [
     'Index' =>'Index  ',
     'Main' =>' Main',
     'General' =>' General',
+    'Admin' =>' Admin',
+    'articals' =>' Articals',
 ];

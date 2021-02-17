@@ -20,5 +20,9 @@ return [
     'messages_update' => 'Data modified successfully',
     'messages_delete' => 'Data deleted  successfully',
     'read_more' => 'read_more',
-    'data_post' =>'Post By: Admin'
+    'data_post' =>'Post By: Admin',
+    'update' =>' data was updated',
+    'success' =>' data added successfully',
+    'deleted' =>' data deleted successfully',
+    'data_time' =>' June 21, 2021 at 8:12pm',
 ];

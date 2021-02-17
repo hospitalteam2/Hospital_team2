@@ -10,7 +10,7 @@ class SiteController extends Controller
 {
     public function index()
     {
-        $articals=Artical::all();
+        $articals=Artical::orderBy('id', 'desc')->get();
         return view('site.home',compact('articals'));
     }
 }

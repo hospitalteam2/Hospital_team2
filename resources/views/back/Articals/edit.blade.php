@@ -57,7 +57,7 @@
                             for="exampleFormControlTextarea1">{{ trans('Articals.image') }}
                             :</label>
                         <input type="file" name="image"   value="{{ old('image', $artical->image) }}" class="form-control">
-                        <img src="{{ asset('images_admin/'.$artical->image) }}" style=" margin-top: 10px; width: 200px; height: 160px;" alt="">
+                        <img src="{{ asset('images_admin/'.$artical->image) }}" style=" margin-top: 10px; width: 200px; height: 140px;" alt="">
                     </div>
                     <br><br>
 
