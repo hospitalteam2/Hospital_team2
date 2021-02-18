@@ -6,23 +6,26 @@
     <div class="header-top">
         <div class="auto-container clearfix">
             <div class="top-left clearfix">
-                <ul class="list">
-                    <li><span class="icon fas fa-envelope"></span> {{trans('main_header_trans.2130 Fulton Street San Diego CA 94117-1080 USA')}}</li>
-                    <li><span class="icon fas fa-phone"></span> <a href="tel:+555–123–2323"> 555–123–2323</a></li>
-                </ul>
+                @foreach($settings as $setting)
+                    @if( $loop->index == 0)
+                        <ul class="list">
+                            <li><span
+                                    class="icon fas fa-envelope"></span> {{ $setting->address }}</li>
+                            <li><span class="icon fas fa-phone"></span> <a
+                                    href="tel:+555–123–2323"> {{ $setting->phone}}</a></li>
+                        </ul>
             </div>
             <div class="top-right clearfix">
                 <ul class="social-icons">
-                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                    <li><a href="#"><span class="fab fa-google"></span></a></li>
-                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                    <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                    <li><a href="#"><span class="fab fa-linkedin"></span></a></li>
+                    <li><a href="{{ $setting->facebook }}"><span class="fab fa-facebook-f"></span></a></li>
+                    <li><a href="{{ $setting->google }}"><span class="fab fa-google"></span></a></li>
+                    <li><a href="{{ $setting->twitter }}"><span class="fab fa-twitter"></span></a></li>
+                    <li><a href="{{ $setting->skype }}"><span class="fab fa-skype"></span></a></li>
+                    <li><a href="{{ $setting->linked }}"><span class="fab fa-linkedin"></span></a></li>
                 </ul>
 
 
             </div>
-
         </div>
     </div>
     <!-- End Header Top -->
@@ -33,16 +36,22 @@
             <div class="auto-container clearfix">
                 <!--Info-->
                 <div class="logo-outer">
-                    <div class="logo"><a href="index.html"><img src="Site/images/logo.png" alt="" title="" style="width: 250px;height: 60px"></a></div>
+                    <div class="logo"><a href="#"><img src="{{asset('Site/images/logo/'.$setting->photo)}}"
+                            style="width: 250px;height: 60px"
+                            alt="logo"></a></div>
                 </div>
-
+            @endif
+            @endforeach
                 <!--Nav Box-->
                 <div class="nav-outer clearfix">
-                    <!--Mobile Navigation Toggler For Mobile--><div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
+                    <!--Mobile Navigation Toggler For Mobile-->
+                    <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="navbar-header">
                             <!-- Togg le Button -->
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon flaticon-menu"></span>
                             </button>
                         </div>
@@ -137,11 +146,13 @@
                                 <li><a href="contact.html">{{trans('main_header_trans.Contact')}}</a></li>
 
 
-                                <li class="dropdown"><a href="#" style="padding-right: 13px;">{{trans('main_header_trans.language')}}</a>
+                                <li class="dropdown"><a href="#"
+                                                        style="padding-right: 13px;">{{trans('main_header_trans.language')}}</a>
                                     <ul>
                                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                             <li>
-                                                <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                <a rel="alternate" hreflang="{{ $localeCode }}"
+                                                   href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                                     {{ $properties['native'] }}
                                                 </a>
                                             </li>
@@ -160,7 +171,8 @@
                         <div class="search-box-btn"><span class="icon flaticon-search"></span></div>
                         <!-- Button Box -->
                         <div class="btn-box">
-                            <a href="contact.html" class="theme-btn btn-style-one"><span class="txt">{{trans('main_header_trans.Appointment')}}</span></a>
+                            <a href="contact.html" class="theme-btn btn-style-one"><span
+                                    class="txt">{{trans('main_header_trans.Appointment')}}</span></a>
                         </div>
                     </div>
 
@@ -175,7 +187,8 @@
         <div class="auto-container clearfix">
             <!--Logo-->
             <div class="logo pull-left">
-                <a href="index.html" class="img-responsive"><img src="Site/images/logo.png" alt="" title=""style="width: 250px;height: 60px"></a>
+                <a href="index.html" class="img-responsive"><img src="Site/images/logo.png" alt="" title=""
+                                                                 style="width: 250px;height: 60px"></a>
             </div>
 
             <!--Right Col-->
@@ -199,7 +212,8 @@
 
         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
         <nav class="menu-box">
-            <div class="nav-logo"><a href="index.html"><img src="Site/images/logo.png" alt="" title=""style="width: 250px;height: 60px"></a></div>
+            <div class="nav-logo"><a href="index.html"><img src="Site/images/logo.png" alt="" title=""
+                                                            style="width: 250px;height: 60px"></a></div>
 
             <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
         </nav>

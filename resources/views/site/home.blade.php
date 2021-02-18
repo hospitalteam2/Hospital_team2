@@ -1,5 +1,6 @@
 @extends('site.layouts.master')
 @section('css')
+@stop
 @section('title')
 
 @stop
@@ -219,16 +220,14 @@
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <!-- Sec Title -->
                         <div class="sec-title light">
-                            <h2>Health <br> Department</h2>
+                            <h2>{{trans('department_trans.Health')}} <br> {{trans('department_trans.title_page')}} </h2>
                             <div class="separator"></div>
                         </div>
                         <!--Tab Btns-->
                         <ul class="tab-btns tab-buttons clearfix">
-                            <li data-tab="#tab-urology" class="tab-btn">Urology Department</li>
-                            <li data-tab="#tab-department" class="tab-btn active-btn">Neurology Department</li>
-                            <li data-tab="#tab-gastrology" class="tab-btn">Gastrology Department</li>
-                            <li data-tab="#tab-cardiology" class="tab-btn">Cardiology Department</li>
-                            <li data-tab="#tab-eye" class="tab-btn">Eye Care Department</li>
+                            @foreach ($Departments as $Department )
+                            <li data-tab="#tab-urology" class="tab-btn">{{ $Department->Name }} </li>
+                        @endforeach
                         </ul>
                     </div>
                     <!--Column-->
@@ -239,8 +238,8 @@
                             <!-- Tab -->
                             <div class="tab" id="tab-urology">
                                 <div class="content">
-                                    <h2>Urology Department</h2>
-                                    <div class="title">Department of Neurology</div>
+                                    <h2>{{trans('department_trans.Urology Department')}}</h2>
+                                    <div class="title">{{trans('department_trans.Urology Department of Neurology')}}</div>
                                     <div class="text">
                                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
                                             eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient

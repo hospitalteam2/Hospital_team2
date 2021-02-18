@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/noha', function () {
+    return view('noha');
+});
 
  Auth::routes();
  Route::group(['middleware' => ['guest']],function(){
@@ -28,31 +30,26 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
 
-// site
+  // site
     Route::group(['namespace' => 'Site'], function(){
         Route::get('/', 'SiteController@index');
     });
 
-//   Admin panel
+      //   Admin panel
     Route::group(['namespace' => 'Admin'], function(){
        Route::get('/admin', 'HomeController@index')->name('home');
        Route::resource('/artical', 'ArticalsController');
        });
+    /*================Starting Setting Route==========*/
+    Route::group(['namespace' => 'Setting'], function(){
+        Route::resource('/setting', 'SettingController');
+    });
+    /*===============  Starting Department Route =========*/
+         Route::group(['namespace' => 'Department'], function(){
+             Route::resource('/Departments', 'DepartmentController');
+         });
 
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('/{page}', 'AdminController@index');
 
 
