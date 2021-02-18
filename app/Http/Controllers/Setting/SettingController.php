@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Setting;
 
 use App\Http\Controllers\Controller;
-
-use App\Http\Requests\StoreSetting;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 
@@ -39,11 +37,10 @@ class SettingController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSetting $request)
+    public function store(Request $request)
     {
 
         try {
-           $validated = $request->validated();
             $setting = Setting::find(1);
             $setting->address = ['en' => $request->address_en, 'ar' => $request->address];
             $setting->phone = $request->phone;
