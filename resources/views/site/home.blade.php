@@ -159,7 +159,6 @@
     <section class="featured-section">
         <div class="auto-container">
             <div class="row clearfix">
-
                 <!-- Feature Block -->
                 <div class="feature-block col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
@@ -170,7 +169,6 @@
                         <div class="text">Whether you're taking your first steps, just finding your stride,</div>
                     </div>
                 </div>
-
                 <!-- Feature Block -->
                 <div class="feature-block col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="250ms" data-wow-duration="1500ms">
@@ -211,7 +209,7 @@
 
     <!-- Department Section Three -->
     <section class="department-section-three">
-        <div class="image-layer" style="background-image:url(Site/images/background/6.jpg)"></div>
+        <div class="image-layer" style="background-image:url({{asset('Site/images/background/6.jpg')}})"></div>
         <div class="auto-container">
             <!-- Department Tabs-->
             <div class="department-tabs tabs-box">
@@ -234,7 +232,6 @@
                     <div class="col-lg-8 col-md-12 col-sm-12">
                         <!--Tabs Container-->
                         <div class="tabs-content">
-
                             <!-- Tab -->
                             <div class="tab" id="tab-urology">
                                 <div class="content">
@@ -425,7 +422,7 @@
                 <div class="team-block col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <img src="images/resource/team-1.jpg" alt="" />
+                            <img src="Site/images/resource/team-1.jpg" alt="" />
                             <div class="overlay-box">
                                 <ul class="social-icons">
                                     <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
@@ -448,7 +445,7 @@
                 <div class="team-block col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="250ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <img src="images/resource/team-2.jpg" alt="" />
+                            <img src="Site/images/resource/team-2.jpg" alt="" />
                             <div class="overlay-box">
                                 <ul class="social-icons">
                                     <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
@@ -471,7 +468,7 @@
                 <div class="team-block col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="500ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <img src="images/resource/team-3.jpg" alt="" />
+                            <img src="Site/images/resource/team-3.jpg" alt="" />
                             <div class="overlay-box">
                                 <ul class="social-icons">
                                     <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
@@ -494,7 +491,7 @@
                 <div class="team-block col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="inner-box wow fadeInLeft" data-wow-delay="750ms" data-wow-duration="1500ms">
                         <div class="image">
-                            <img src="images/resource/team-4.jpg" alt="" />
+                            <img src="Site/images/resource/team-4.jpg" alt="" />
                             <div class="overlay-box">
                                 <ul class="social-icons">
                                     <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
@@ -520,7 +517,7 @@
     <!-- End Team Section -->
 
     <!-- Video Section -->
-    <section class="video-section" style="background-image:url(images/background/5.jpg)">
+    <section class="video-section" style="background-image:url({{asset('Site/images/background/5.jpg')}})">
         <div class="auto-container">
             <div class="content">
                 <a href="https://www.youtube.com/watch?v=kxPCFljwJws" class="lightbox-image play-box"><span
@@ -734,7 +731,7 @@
     <!-- End Testimonial Section Two -->
 
     <!-- Counter Section -->
-    <section class="counter-section style-two" style="background-image: url(images/background/pattern-3.png)">
+    <section class="counter-section style-two" style="background-image: url({{asset('Site/images/background/pattern-3.png')}})">
         <div class="auto-container">
 
             <!-- Fact Counter -->
@@ -875,7 +872,7 @@
                                         <li><span class="icon flaticon-heart"></span> 126</li>
                                     </ul>
                                     <ul class="post-meta">
-{{--                                        <li>June 21, 2018 at 8:12pm</li>--}}
+                                        <li>{{trans('Articals.data_time')}}</li>
                                         <li>{{trans('Articals.data_post')}}</li>
                                     </ul>
                                     <h3><a href="blog-detail.html">{{ $artical->title }} </a>
@@ -904,8 +901,8 @@
                                             <li><span class="icon flaticon-heart"></span> 126</li>
                                         </ul>
                                         <ul class="post-meta">
-{{--                                            <li>June 21, 2018 at 8:12pm</li>--}}
-                                            <li>{{trans('Articals.data_post')}}</li>
+                                            <li>{{trans('Articals.data_time')}}</li>
+                                             <li>{{trans('Articals.data_post')}}</li>
                                         </ul>
                                         <h3><a href="blog-detail.html">{{ $artical->title }} </a>
                                         </h3>

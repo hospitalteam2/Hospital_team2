@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -12,10 +11,10 @@ class AdminController extends Controller
         if (view()->exists($id)) {
             return view($id);
         } else {
-            return view('404');
+            return view('back.404');
         }
 
-     //   return view($id);
+//        return view($id);
     }
 
     /**
@@ -73,12 +72,7 @@ class AdminController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         //

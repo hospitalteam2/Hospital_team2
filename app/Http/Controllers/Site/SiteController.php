@@ -12,10 +12,14 @@ class SiteController extends Controller
 {
     public function index()
     {
+
         $articals=Artical::all();
         $Departments=Department::all();
         $settings=Setting::all();
         return view('site.home',compact('articals','Departments','settings'));
+
+        $articals=Artical::orderBy('id', 'desc')->get();
+        return view('site.home',compact('articals'));
     }
 
 }

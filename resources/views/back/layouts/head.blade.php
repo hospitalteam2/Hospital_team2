@@ -1,5 +1,9 @@
 <!-- Title -->
+<<<<<<< HEAD
 <title> @yield('title') </title>
+=======
+<title>@yield('title') </title>
+>>>>>>> dde6933c1b95e666ac5a90f0fe69ba01fc1a676d
 <!-- Favicon -->
 <link rel="icon" href="{{URL::asset('assets/img/brand/favicon.png')}}" type="image/x-icon"/>
 <!-- Icons css -->

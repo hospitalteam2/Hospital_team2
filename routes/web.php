@@ -14,16 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/noha', function () {
-    return view('noha');
-});
 
- Auth::routes();
- Route::group(['middleware' => ['guest']],function(){
-    Route::get('/', function () {
-        return view('auth.login');
-    });
- });
+Auth::routes(['register' => false]);
+
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
@@ -43,14 +36,42 @@ Route::group(
     /*================Starting Setting Route==========*/
     Route::group(['namespace' => 'Setting'], function(){
         Route::resource('/setting', 'SettingController');
+//   Admin panel
+        Route::group(['namespace' => 'Admin'], function(){
+        Route::get('/admin', 'HomeController@index')->name('home');
+
+        Route::resource('/articals', 'Articals\ArticalsController');
+
+        Route::get('/{page}', 'AdminController@index');
+
     });
     /*===============  Starting Department Route =========*/
          Route::group(['namespace' => 'Department'], function(){
              Route::resource('/Departments', 'DepartmentController');
          });
 
+
     });
 Route::get('/{page}', 'AdminController@index');
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

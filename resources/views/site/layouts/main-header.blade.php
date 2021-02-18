@@ -187,8 +187,9 @@
         <div class="auto-container clearfix">
             <!--Logo-->
             <div class="logo pull-left">
-                <a href="index.html" class="img-responsive"><img src="Site/images/logo.png" alt="" title=""
-                                                                 style="width: 250px;height: 60px"></a>
+                <a href="index.html" class="img-responsive"><a href="#"><img src="{{asset('Site/images/logo/'.$setting->photo)}}"
+                                                                             style="width: 250px;height: 60px"
+                                                                             alt="logo"></a>
             </div>
 
             <!--Right Col-->
