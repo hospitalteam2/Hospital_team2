@@ -15,6 +15,7 @@ return [
     'logo'=>'logo',
     'delete'=>'delete',
     'Save'=>'Save',
+    'show_Setting'=>'show_Setting',
 
 
 

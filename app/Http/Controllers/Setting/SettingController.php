@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Setting;
 
 use App\Http\Controllers\Controller;
+use App\Models\Artical;
+use App\Models\Department;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 
@@ -16,9 +18,9 @@ class SettingController extends Controller
      */
     public function index()
     {
-        $setting=Setting::first();
-        $arr= array('setting' => $setting);
-       return view('back.Settings.create', $arr);
+        $settings=Setting::all();
+//        $arr= array('setting' => $setting);
+       return view('back.Settings.create', compact('settings'));
     }
 
     /**
@@ -39,36 +41,30 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
+//        $validated = $request->validated();
+        $setting = new Setting();
+        $setting->address = ['en' => $request->address_en, 'ar' => $request->address];
+        $setting->phone = $request->phone;
+        $setting->email = $request->email;
+        $setting->twitter = $request->twitter;
+        $setting->google = $request->google;
+        $setting->facebook = $request->facebook;
+        $setting->linked = $request->linked;
+        $setting->skype = $request->skype;
 
-        try {
-            $setting = Setting::find(1);
-            $setting->address = ['en' => $request->address_en, 'ar' => $request->address];
-            $setting->phone = $request->phone;
-            $setting->email = $request->email;
-            $setting->twitter = $request->twitter;
-            $setting->google = $request->google;
-            $setting->facebook = $request->facebook;
-            $setting->linked = $request->linked;
-            $setting->skype = $request->skype;
+        if ($img = $request->file('photo')) {
+            $file = $request->file('photo');
 
-            if ($img = $request->file('photo')) {
-                $file = $request->file('photo');
+            $extension = $file->getClientOriginalExtension();
+            $filename = md5(time()) . '.' . $extension;
+            $img->move('Site/images/logo', $filename);
+            $setting->photo= $filename;
+        };
 
-                $extension = $file->getClientOriginalExtension();
-                $filename = md5(time()) . '.' . $extension;
-                $img->move('Site/images/logo', $filename);
-                $setting->photo = $filename;
-            }
+        $setting->save();
+        session()->flash('success');
 
-            $setting->save();
-            toastr()->success(trans('setting.messages_update'));
-            return redirect()->route('setting.index');
-
-        } catch (\Exception $e) {
-            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-        }
-
-
+        return redirect()->back();
     }
 
     /**
@@ -100,19 +96,51 @@ class SettingController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
+    public function update(Request $request)
+    {
+
+        try {
+            $setting = Setting::findOrFail($request->id);
+            $setting->address = ['en' => $request->address_en, 'ar' => $request->address];
+            $setting->phone = $request->phone;
+            $setting->email = $request->email;
+            $setting->twitter = $request->twitter;
+            $setting->google = $request->google;
+            $setting->facebook = $request->facebook;
+            $setting->linked = $request->linked;
+            $setting->skype = $request->skype;
+
+            if ($img = $request->file('photo')) {
+                $file = $request->file('photo');
+
+                $extension = $file->getClientOriginalExtension();
+                $filename = md5(time()) . '.' . $extension;
+                $img->move('Site/images/logo', $filename);
+                $setting->photo = $filename;
+            }
+
+            $setting->save();
+            toastr()->success(trans('setting.messages_store'));
+            return redirect()->route('setting.index');
+
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+
+
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $setting = Setting::findOrFail($request->id)->delete();
+        toastr()->error(trans('messages.Delete'));
+        return redirect()->route('setting.index');
+
     }
 }
